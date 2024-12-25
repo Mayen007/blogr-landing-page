@@ -1,0 +1,359 @@
+:root {
+  --light-red-cta-text: hsl(356, 100%, 66%);
+  --cta-hover-background: hsl(355, 100%, 74%);
+  --dark-blue-headings: hsl(208, 49%, 24%);
+
+  --white-text: hsl(0, 0%, 100%);
+  --grayish-blue-footer-text: hsl(240, 2%, 79%);
+  --very-dark-grayish-blue: hsl(207, 13%, 34%);
+  --very-dark-blue-footer-background: hsl(240, 10%, 16%);
+
+  /* Background gradient - Intro/CTA mobile nav: */
+  --very-light-red-background: hsl(13, 100%, 72%);
+  --light-red: hsl(353, 100%, 62%);
+
+  /* Background gradient - body: */
+  --very-dark-blue-background: hsl(237, 17%, 21%);
+  --very-dark-desaturated-blue-background: hsl(237, 23%, 32%);
+}
+
+@font-face {
+  font-family: 'Overpass-light';
+  src: url(./assets/fonts/Overpass/static/Overpass-Light.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Overpass-semibold';
+  src: url(./assets/fonts/Overpass/static/Overpass-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu-regular';
+  src: url(./assets/fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu-medium';
+  src: url(./assets/fonts/Ubuntu/Ubuntu-Medium.ttf) format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu-bold';
+  src: url(./assets/fonts/Ubuntu/Ubuntu-Bold.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Overpass-light', sans-serif;
+  /* color: var(--white-text); */
+  font-size: 16px;
+}
+
+.background__container {
+  background: linear-gradient(to right, var(--very-light-red-background), var(--light-red)), url(./assets/images/bg-pattern-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: top 50% right 10%;
+  background-size: cover;
+  /* background-blend-mode: multiply; */
+  background-blend-mode: screen;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  min-height: 50vh;
+  padding-top: 1.8rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 2rem;
+}
+
+.nav__item a {
+  color: var(--white-text);
+  text-decoration: none;
+}
+
+.nav__item a:hover {
+  text-decoration: underline;
+  color: var(--white-text);
+}
+
+.nav__item ul {
+  /* display: none; */
+  background-color: var(--white-text);
+  color: var(--dark-blue-headings);
+  width: 100px;
+  display: inline;
+}
+
+.user__action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+}
+
+.user__action li a {
+  text-decoration: none;
+  font-family: 'Overpass-semibold', sans-serif;
+}
+
+.login__btn {
+  color: var(--white-text);
+  opacity: 0.8;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.signup__btn {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+}
+
+.hero__section {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__heading {
+  font-size: 3.5rem;
+  color: var(--white-text);
+  margin-bottom: 1rem;
+  font-family: 'Overpass-light', sans-serif;
+}
+
+.hero__subheading {
+  font-size: 1.2rem;
+  color: var(--white-text);
+  margin-bottom: 1.2rem;
+  font-family: 'Overpass-light', sans-serif;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cta__btn {
+  font-family: 'Ubuntu-medium', sans-serif;
+  width: 150px;
+  border: 1px solid var(--white-text);
+  display: block;
+  padding: 0.75rem 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.cta__start__btn,
+.signup__btn {
+  background-color: var(--white-text);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--light-red-cta-text);
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.cta__start__btn:hover,
+.signup__btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--white-text);
+}
+
+.cta__learn__btn {
+  color: var(--white-text);
+  background-color: inherit;
+}
+
+.cta__learn__btn:hover {
+  background-color: var(--white-text);
+  color: var(--light-red-cta-text);
+}
+
+.feature__section {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.feature__section__heading {
+  font-family: 'Ubuntu-bold', sans-serif;
+  text-align: center;
+  color: var(--dark-blue-headings);
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+}
+
+section:not(.hero__section, .feature__section) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+section:not(.hero__section, .feature__section) img {
+  width: 50%;
+  height: auto;
+  object-fit: contain;
+}
+
+section:not(.hero__section, .feature__section) div {
+  width: 50%;
+}
+
+.about__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about__container img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.article {
+  width: 50%;
+}
+
+.state__of__the__art {
+  background: linear-gradient(to right, var(--very-dark-blue-background), var(--very-dark-desaturated-blue-background)), url(./assets/images/bg-pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  color: var(--white-text);
+  background-blend-mode: screen;
+}
+
+.state__of__the__art h4 {
+  font-family: 'Overpass-semibold', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.state__of__the__art p {
+  font-family: 'Overpass-light';
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.state__img {
+  background: url(./assets/images/bg-pattern-circles.svg) no-repeat cover/contain center;
+  z-index: 1;
+}
+
+.section__heading {
+  font-size: 1.3rem;
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 1rem;
+  font-family: 'Overpass-light', sans-serif;
+}
+
+.description {
+  font-size: 16px;
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  font-family: 'Overpass-light', sans-serif;
+}
+
+footer {
+  font-family: 'Overpass-light', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: var(--very-dark-blue-footer-background);
+  color: var(--grayish-blue-footer-text);
+  padding: 2.5rem 0;
+  border-top-right-radius: 50px;
+  color: var(--grayish-blue-footer-text);
+}
+
+footer h4 {
+  color: var(--white-text);
+  margin-bottom: 1.3rem;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 0.75rem;
+}
+
+footer ul li a {
+  color: var(--grayish-blue-footer-text);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.brand__logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
